@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Submitted Hours </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"  rel="stylesheet">
+    <link href="webjars/bootstrap-datetimepicker/2.3.8/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-success">Register your hours </h1>
+
+        <form  action="#" th:action="@{/save}" th:object="${hour}" method="post">
+
+            <div class="row">
+                <h2 class="bg-danger" th:text="${error != null} ? ${error} : ''">${error}</h2>
+                <br>
+                <div class="form-group row">
+                    <label for="formGroupMonths" class="col-sm-2 col-form-label">Month</label>
+                    <div class=" col-sm-10">
+                        <select class="form-control" id="formGroupMonths"  disabled>
+                            <option th:each="month : ${months}" th:value="${month.key}" th:text="${month.value}" th:selected="${monthSelected} == ${month.key} ? true : false"></option>
+                        </select>
+                        <input type="hidden" name="hourID.month" th:value=${monthSelected} >
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="formGroupYear"  class="col-sm-2 col-form-label">Year</label>
+                    <div class=" col-sm-10">
+                        <select class="form-control col-sm-10" id="formGroupYear" disabled>
+                            <option th:each="year : ${#numbers.sequence(yearBegining,yearEnding)}" th:value="${year}" th:text="${year}" th:selected="${yearSelected} == ${year} ? true : false"></option>
+                        </select>
+                        <input type="hidden" name="hourID.year" th:value=${yearSelected}>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="submittingdate" class="col-sm-2 col-form-label">Submitting Date </label>
+                    <div class='col-sm-6'>
+                        <div class="form-group" style="position:relative">
+                            <div class='input-group date' id='submittingdate'>
+                                <input type='text' class="form-control" name="submittingdate"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="week1" class="col-sm-2 col-form-label">Week 1</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="week1" name="week1" placeholder="Hours in Week 1">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="week2" class="col-sm-2 col-form-label">Week 2</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="week2" name="week2" placeholder="Hours in Week 2">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="week3" class="col-sm-2 col-form-label">Week 3</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="week3" name="week3" placeholder="Hours in Week 3">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="week4" class="col-sm-2 col-form-label">Week 4</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="week4" name="week4" placeholder="Hours in Week 4">
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Submit Hours">
+            </div>
+
+        </form>
+    </div>
+
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="webjars/bootstrap-datetimepicker/2.3.8/js/bootstrap-datetimepicker.js"></script>
+    <script src="webjars/momentjs/2.9.0/moment.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#submittingdate').datetimepicker({
+                orientation: "auto",
+                format: 'yyyy-mm-dd 00:00:00',
+                timepicker:false,
+                showTimePicker: false
+            });
+        });
+    </script>
+</body>
+</html>

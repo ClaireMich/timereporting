@@ -1,0 +1,5 @@
+Employee id: 1 /t Month: January /t Year: 2004 /t Total amount of Hours Registered: 0 /t Date registered: 2019/04/25 17:01:33 /t Date submitted: 2019-04-10 00:00:00.0Employee id: 1 /t Month: January /t Year: 2010 /t Total amount of Hours Registered: 0 /t Date registered: 2019/04/25 17:02:27 /t Date submitted: 2019-04-10 00:00:00.0Employee id: 1 Month: January Year: 2009 Total amount of Hours Registered: 0 Date registered: 2019/04/25 17:04:41 Date submitted: 2019-04-10 00:00:00.0
+Employee id: 1 \t Month: January \t Year: 2016 \t Total amount of Hours Registered: 0 \t Date registered: 2019/04/25 17:11:38 \t Date submitted: 2019-04-10 00:00:00.0\r\n
+Employee id: 1 Month: January Year: 2011 Total amount of Hours Registered: 0 Date registered: 2019/04/25 17:13:27 Date submitted: 2019-04-10 00:00:00.0
+Employee Login: accenture Month: January Year: 2003 Total amount of Hours Registered: 0 Date registered: 2019/04/26 11:01:35 Date submitted: 2019-04-10 00:00:00.0
+Employee Login: accenture Month: January Year: 1990 Total amount of Hours Registered: 0 Date registered: 2019/04/26 12:20:41 Date submitted: 2019-04-10 00:00:00.0

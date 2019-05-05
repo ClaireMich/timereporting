@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="bg-success" th:text="${success != null} ? ${success} : ''">${success}</h2>
+        <br>
+        <form action="/search">
+            <div class="form-group">
+                <label for="formGroupMonths">Month</label>
+                <select class="form-control" id="formGroupMonths" name="month">
+                    <option th:each="month : ${months}" th:value="${month.key}" th:text="${month.value}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="formGroupYear">Year</label>
+                <select class="form-control" id="formGroupYear" name="year">
+                    <option th:each="year : ${#numbers.sequence(yearBegining,yearEnding)}" th:value="${year}" th:text="${year}"></option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Search">
+        </form>
+
+    </div>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

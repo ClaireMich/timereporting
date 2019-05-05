@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Submitted Hours </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<h1>This month and year is already submitted</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Month</th>
+        <th scope="col">Year</th>
+        <th scope="col">Submitted Date</th>
+        <th scope="col">Week 1</th>
+        <th scope="col">Week 2</th>
+        <th scope="col">Week 3</th>
+        <th scope="col">Week 4</th>
+        <th scope="col">Total Hours </th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="hour : ${hours}">
+        <tr>
+            <td th:text="${months.get(hour.hourID.month)}"></td>
+            <td th:text="${hour.hourID.year}"></td>
+            <td th:text="${hour.submittingdate}"></td>
+            <td th:text="${hour.week1}"></td>
+            <td th:text="${hour.week2}"></td>
+            <td th:text="${hour.week3}"></td>
+            <td th:text="${hour.week4}"></td>
+            <td th:text="${hour.totalhours}"></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
